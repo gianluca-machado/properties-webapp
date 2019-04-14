@@ -11,6 +11,11 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "es5",
+    "types": [
+      "jquery",
+      "materialize-css",
+      "jasmine"
+    ],
     "typeRoots": [
       "node_modules/@types"
     ],
