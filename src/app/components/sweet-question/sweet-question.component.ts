@@ -1,21 +1,18 @@
-import { Component, ViewChild, Input } from '@angular/core';
-import { SwalComponent, SwalPartialTargets } from '@sweetalert2/ngx-sweetalert2';
+import { Component, Input, ViewChild } from '@angular/core';
+import { SwalPartialTargets, SwalComponent } from '@sweetalert2/ngx-sweetalert2';
 import { CustomizeMessageService } from 'src/app/services/customize-message.service';
 
-/**
- * Default message component into app.
- */
 @Component({
-  selector: 'app-sweet-message',
-  templateUrl: './sweet-message.component.html',
-  styleUrls: ['./sweet-message.component.scss'],
+  selector: 'app-sweet-question',
+  templateUrl: './sweet-question.component.html',
+  styleUrls: ['./sweet-question.component.scss'],
 })
-export class SweetMessageComponent {
-  static componentName = 'SweetMessageComponent';
+export class SweetQuestionComponent {
+  static componentName = 'SweetQuestionComponent';
 
   /**
-   * Swal view child reference.
-   */
+  * Swal view child reference.
+  */
   @ViewChild('swal') public generalSwal: SwalComponent;
 
   /**
@@ -49,13 +46,13 @@ export class SweetMessageComponent {
   /**
    * Close message.
    */
-  close() {
+  close(answer: boolean) {
 
     // clos swal
     this.generalSwal.nativeSwal.close();
 
     // send answer
-    this.sendAnswer(true);
+    this.sendAnswer(answer);
 
   }
 
@@ -65,7 +62,7 @@ export class SweetMessageComponent {
   sendAnswer(answer: boolean) {
 
     // send answer
-    this.customizeMessageService.loaderSubjectAnswerMessage.next(answer);
+    this.customizeMessageService.loaderSubjectAnswerQuestion.next(answer);
 
   }
 

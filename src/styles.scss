@@ -1,4 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'src/app/styles/flex-utils.scss';
+@import 'src/app/styles/float-elements.scss';
+@import 'src/app/styles/margin.scss';
+@import 'src/app/styles/padding.scss';
+@import 'src/app/styles/text-alignment.scss';
+@import 'src/app/styles/text-transformation.scss';
+@import 'src/app/styles/themes.scss';
+
+/* Others */
 .container {
-  padding: 10px;
+  padding: $padding;
+}
+
+body {
+  font-size: 15px;
+}
+
+.no-border {
+  border: none !important;
+}
+
+.no-shadow {
+  box-shadow: none !important;
 }

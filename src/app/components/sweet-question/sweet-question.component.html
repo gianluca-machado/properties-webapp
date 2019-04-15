@@ -1,6 +1,6 @@
 <!-- Swall confirm -->
 <swal #swal [showConfirmButton]="false" [showCancelButton]="false" [allowOutsideClick]="dismissible"
-  (cancel)="sendAnswer(true)">
+  (cancel)="sendAnswer(false)">
 
   <!-- content -->
   <div class="vgroup text-align-center" *swalPartial="swalTargets.content">
@@ -19,8 +19,10 @@
 
     <!-- button -->
     <div class="d-flex justify-content-center align-items-center">
-      <a class="button-sweet primary" (click)="close()">
-        {{ swalOptions.button }}
+      <a *ngFor="let button of swalOptions?.buttons; let i = index"
+        [ngClass]="{'margin-right-5px': i === 0, 'margin-left-5px': i === swalOptions?.buttons?.length - 1, 'margin-5px': i !== swalOptions?.buttons?.length - 1 && i !== 0}"
+        [class]="'button-sweet ' + (button?.class ? button?.class : 'medium')" (click)="close(button?.value)">
+        {{ button?.text }}
       </a>
     </div>
 

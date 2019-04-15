@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+$padding: 16px;
+
+/* Padding */
+.no-padding {
+  padding: 0 !important;
+}
+
+.padding {
+  padding: $padding !important;
+}
+
+.padding-vertical {
+  padding: $padding 0px !important;
+}
+
+.padding-horizontal {
+  padding: 0px $padding !important;
+}
+
+.padding-top {
+  padding-top: $padding !important;
+}
+
+.padding-bottom {
+  padding-bottom: $padding !important;
+}
+
+.padding-start {
+  padding-left: $padding !important;
+}
+
+.padding-end {
+  padding-right: $padding !important;
+}

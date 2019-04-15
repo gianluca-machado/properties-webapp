@@ -1,5 +1,17 @@
 <div class="container">
-  <button mz-button>
-    ngx-materialize button
-  </button>
+  <div nz-row>
+    <div nz-col nzSpan="12">
+      <button nz-button class="secondary no-border" nzType="primary" (click)="showMessage()">
+        Show Message
+      </button>
+    </div>
+  </div>
+
+  <div nz-row class="margin-top">
+    <div nz-col nzSpan="12">
+      <button nz-button class="secondary no-border" nzType="primary" (click)="showQuestion()">
+        Show Question
+      </button>
+    </div>
+  </div>
 </div>

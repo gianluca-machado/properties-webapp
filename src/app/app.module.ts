@@ -10,6 +10,7 @@ import { SharedModule } from './shared/shared.module';
 
 // components
 import { AppComponent } from './app.component';
+import { CustomizeMessageService } from './services/customize-message.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,9 @@ import { AppComponent } from './app.component';
     BrowserModule.withServerTransition({ appId: 'my-app' }),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
   ],
-  providers: [],
+  providers: [
+    CustomizeMessageService,
+  ],
   bootstrap: [
     AppComponent,
   ],

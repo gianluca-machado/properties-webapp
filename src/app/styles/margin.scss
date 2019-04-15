@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+$margin: 16px;
+
+/* margin */
+.no-margin {
+  margin: 0 !important;
+}
+
+.margin {
+  margin: $margin !important;
+}
+
+.margin-vertical {
+  margin: $margin 0px !important;
+}
+
+.margin-horizontal {
+  margin: 0px $margin !important;
+}
+
+.margin-top {
+  margin-top: $margin !important;
+}
+
+.margin-bottom {
+  margin-bottom: $margin !important;
+}
+
+.margin-start {
+  margin-left: $margin !important;
+}
+
+.margin-end {
+  margin-right: $margin !important;
+}

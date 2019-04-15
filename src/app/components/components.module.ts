@@ -6,6 +6,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 // components
 import { SweetMessageComponent } from './sweet-message/sweet-message.component';
+import { SweetQuestionComponent } from './sweet-question/sweet-question.component';
 
 @NgModule({
   imports: [
@@ -16,10 +17,12 @@ import { SweetMessageComponent } from './sweet-message/sweet-message.component';
   ],
   declarations: [
     SweetMessageComponent,
+    SweetQuestionComponent,
   ],
   providers: [],
   exports: [
     SweetMessageComponent,
+    SweetQuestionComponent,
   ],
 })
 export class ComponentsModule { }

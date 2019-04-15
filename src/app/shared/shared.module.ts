@@ -3,7 +3,9 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ComponentsModule } from './../components/components.module';
-import { MaterializeComponentModule } from './materialize.module';
+
+// see documentation: https://ng.ant.design/components/spin/en
+import { NgZorroAntdModule } from 'ng-zorro-antd';
 
 @NgModule({
   imports: [
@@ -11,7 +13,7 @@ import { MaterializeComponentModule } from './materialize.module';
     FormsModule,
     ReactiveFormsModule,
     ComponentsModule,
-    MaterializeComponentModule.forRoot(),
+    NgZorroAntdModule ,
   ],
   declarations: [],
   exports: [
@@ -19,7 +21,7 @@ import { MaterializeComponentModule } from './materialize.module';
     FormsModule,
     ReactiveFormsModule,
     ComponentsModule,
-    MaterializeComponentModule,
+    NgZorroAntdModule,
   ],
 })
 export class SharedModule {}

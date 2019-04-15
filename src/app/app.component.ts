@@ -1,5 +1,7 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { CustomizeMessageService, MessageState, QuestionState } from './services/customize-message.service';
 import { SweetMessageComponent } from './components/sweet-message/sweet-message.component';
+import { SweetQuestionComponent } from './components/sweet-question/sweet-question.component';
 
 /**
  * App component.
@@ -9,15 +11,25 @@ import { SweetMessageComponent } from './components/sweet-message/sweet-message.
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  title = 'MKSaúde';
 
   /**
    * Swal options.
    */
-  public swalOptions: any = {
+  public swalMessageOptions: MessageState = {
     title: '',
     content: '',
-    button: 'Entendi',
+    button: '',
+  };
+
+  /**
+   * Swal options.
+   */
+  public swalQuestionOptions: QuestionState = {
+    title: '',
+    content: '',
+    buttons: [],
   };
 
   /**
@@ -26,35 +38,40 @@ export class AppComponent {
   @ViewChild(SweetMessageComponent) messageComponent: SweetMessageComponent;
 
   /**
-   * @ignore.
+   * View qua=tion child.
    */
-  constructor() { }
+  @ViewChild(SweetQuestionComponent) questionComponent: SweetQuestionComponent;
 
   /**
-   * Will show message into a normal way.
+   * @ignore
    */
-  showMessage1() {
+  constructor(
+    private messageService: CustomizeMessageService,
+  ) { }
 
-    // log call
-    console.log('showMessage1()');
+  /**
+   * @ignore
+   */
+  ngOnInit() {
 
-    // set message
-    this.swalOptions.title = 'Usuário e/ou senha inválidos';
-    this.swalOptions.content = 'Verifique as informações inseridas e tente novamente.';
-    this.swalOptions.button = 'Entendi';
+    // define subscribe to listen new messsage subscribe
+    this.messageService.loaderStateMessage.subscribe((state: MessageState) => {
+      console.log(state);
+      this.swalMessageOptions = { ...state };
+      setTimeout(() => {
+        this.messageComponent.show();
+      }, 50);
+    });
 
-    // present swal
-    this.messageComponent.show();
+    // define subscribe to listen new question subscribe
+    this.messageService.loaderStateQuestion.subscribe((state: QuestionState) => {
+      console.log(state);
+      this.swalQuestionOptions = { ...state };
+      setTimeout(() => {
+        this.questionComponent.show();
+      }, 50);
+    });
 
   }
 
-  /**
-   * Will show message into a correct way.
-   */
-  showMessage2() {
-
-    // log call
-    console.log('showMessage2()');
-
-  }
 }
