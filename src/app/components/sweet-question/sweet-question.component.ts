@@ -13,7 +13,7 @@ export class SweetQuestionComponent {
   /**
   * Swal view child reference.
   */
-  @ViewChild('swal') public generalSwal: SwalComponent;
+  @ViewChild('swal', { static: false }) public generalSwal: SwalComponent;
 
   /**
    * Swal options.

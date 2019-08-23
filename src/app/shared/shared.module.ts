@@ -13,7 +13,7 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
     FormsModule,
     ReactiveFormsModule,
     ComponentsModule,
-    NgZorroAntdModule ,
+    NgZorroAntdModule,
   ],
   declarations: [],
   exports: [
@@ -24,4 +24,4 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
     NgZorroAntdModule,
   ],
 })
-export class SharedModule {}
+export class SharedModule { }

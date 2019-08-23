@@ -35,12 +35,12 @@ export class AppComponent implements OnInit {
   /**
    * View message child.
    */
-  @ViewChild(SweetMessageComponent) messageComponent: SweetMessageComponent;
+  @ViewChild(SweetMessageComponent, { static: false }) messageComponent: SweetMessageComponent;
 
   /**
    * View qua=tion child.
    */
-  @ViewChild(SweetQuestionComponent) questionComponent: SweetQuestionComponent;
+  @ViewChild(SweetQuestionComponent, { static: false }) questionComponent: SweetQuestionComponent;
 
   /**
    * @ignore

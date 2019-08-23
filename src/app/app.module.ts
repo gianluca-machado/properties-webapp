@@ -10,7 +10,13 @@ import { SharedModule } from './shared/shared.module';
 
 // components
 import { AppComponent } from './app.component';
+
+// services
 import { CustomizeMessageService } from './services/customize-message.service';
+import { HttpRequestService } from './services/http-request.service';
+import { StorageService } from './services/storage.service';
+import { TokenService } from './services/token.service';
+import { UtilsService } from './services/utils.service';
 
 @NgModule({
   declarations: [
@@ -25,6 +31,10 @@ import { CustomizeMessageService } from './services/customize-message.service';
   ],
   providers: [
     CustomizeMessageService,
+    HttpRequestService,
+    StorageService,
+    TokenService,
+    UtilsService,
   ],
   bootstrap: [
     AppComponent,
