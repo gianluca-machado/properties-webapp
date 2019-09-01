@@ -1,1 +1,52 @@
-<p>new works!</p>
+<div nz-row nzType="flex" nzJustify="center" nzAlign="middle" class="container">
+  <div class="box padding" nz-col nzXs="22" nzSm="16" nzMd="12" nzLg="10" nzXl="8" nzXXl="8">
+    <form nz-form [formGroup]="newForm" (ngSubmit)="submitForm()">
+      <nz-form-item class="text-center">
+        <img src="assets/logo.png" />
+      </nz-form-item>
+
+
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your name!">
+          <nz-input-group nzPrefixIcon="user">
+            <input type="text" nz-input formControlName="name" placeholder="Nome completo" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your e-mail!">
+          <nz-input-group nzPrefixIcon="user">
+            <input type="text" nz-input formControlName="email" placeholder="E-mail" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your password!">
+          <nz-input-group nzPrefixIcon="lock">
+            <input type="password" nz-input formControlName="password" placeholder="Senha" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please confirm your password!">
+          <nz-input-group nzPrefixIcon="lock">
+            <input type="password" nz-input formControlName="confirm" placeholder="Confirmar senha" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control>
+          <label nz-checkbox formControlName="term">
+            <span>Aceito os <a>termos e condições de uso</a></span>
+          </label>
+          <button nz-button nzType="primary" nzSize="large" nzBlock="true">Criar conta</button>
+        </nz-form-control>
+      </nz-form-item>
+
+    </form>
+  </div>
+</div>

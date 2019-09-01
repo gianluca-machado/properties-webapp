@@ -1,6 +1,9 @@
 <div nz-row nzType="flex" nzJustify="center" nzAlign="middle" class="container">
-  <div class="box" nz-col nzXs="22" nzSm="16" nzMd="12" nzLg="10" nzXl="8" nzXXl="6">
+  <div class="box padding" nz-col nzXs="22" nzSm="16" nzMd="12" nzLg="10" nzXl="8" nzXXl="8">
     <form nz-form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+      <nz-form-item class="text-center">
+        <img src="assets/logo.png" />
+      </nz-form-item>
 
       <nz-form-item>
         <nz-form-control nzErrorTip="Please input your e-mail!">
@@ -20,7 +23,7 @@
 
       <nz-form-item>
         <nz-form-control>
-            <a class="login-form-forgot">Esqueci minha senha</a>
+          <a class="login-form-forgot">Esqueci minha senha</a>
           <button nz-button nzType="primary" nzSize="large" nzBlock="true">Entrar</button>
           Ou
           <a (click)="clickNew()">cadastre-se agora!</a>
