@@ -1,17 +1,32 @@
-<div class="container">
-  <div nz-row>
-    <div nz-col nzSpan="12">
-      <button nz-button class="secondary no-border" nzType="primary" (click)="showMessage()">
-        Show Message
-      </button>
-    </div>
-  </div>
+<div nz-row nzType="flex" nzJustify="center" nzAlign="middle" class="container">
+  <div class="box" nz-col nzXs="22" nzSm="16" nzMd="12" nzLg="10" nzXl="8">
+    <form nz-form [formGroup]="loginForm" (ngSubmit)="submitForm()">
 
-  <div nz-row class="margin-top">
-    <div nz-col nzSpan="12">
-      <button nz-button class="secondary no-border" nzType="primary" (click)="showQuestion()">
-        Show Question
-      </button>
-    </div>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your e-mail!">
+          <nz-input-group nzPrefixIcon="user">
+            <input type="text" nz-input formControlName="email" placeholder="E-mail" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your password!">
+          <nz-input-group nzPrefixIcon="lock">
+            <input type="password" nz-input formControlName="password" placeholder="Senha" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control>
+            <a class="login-form-forgot">Esqueci minha senha</a>
+          <button nz-button nzType="primary" nzSize="large" nzBlock="true">Entrar</button>
+          Ou
+          <a>cadastre-se agora!</a>
+        </nz-form-control>
+      </nz-form-item>
+
+    </form>
   </div>
 </div>
