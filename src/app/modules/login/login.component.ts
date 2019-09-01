@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 /**
  * Login component.
@@ -18,6 +19,7 @@ export class LoginComponent implements OnInit {
    */
   constructor(
     private formBuilder: FormBuilder,
+    private router: Router,
   ) { }
 
   /**
@@ -33,6 +35,10 @@ export class LoginComponent implements OnInit {
   submitForm() {
     const value = this.loginForm.getRawValue();
     console.log(value);
+  }
+
+  clickNew() {
+    this.router.navigate(['new']);
   }
 
 }
