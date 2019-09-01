@@ -9,11 +9,15 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
 
 import { IconDefinition } from '@ant-design/icons-angular';
 import { NzIconModule, NZ_ICON_DEFAULT_TWOTONE_COLOR, NZ_ICONS } from 'ng-zorro-antd/icon';
-import { UserOutline, LockOutline } from '@ant-design/icons-angular/icons';
+import { UserOutline, LockOutline, MenuUnfoldOutline, MenuFoldOutline, TeamOutline, LogoutOutline } from '@ant-design/icons-angular/icons';
 
 const icons: IconDefinition[] = [
   UserOutline,
   LockOutline,
+  MenuUnfoldOutline,
+  MenuFoldOutline,
+  TeamOutline,
+  LogoutOutline,
 ];
 
 @NgModule({

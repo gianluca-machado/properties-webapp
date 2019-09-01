@@ -35,6 +35,7 @@ export class LoginComponent implements OnInit {
   submitForm() {
     const value = this.loginForm.getRawValue();
     console.log(value);
+    this.router.navigate(['menu']);
   }
 
   clickNew() {
