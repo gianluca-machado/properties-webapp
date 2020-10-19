@@ -21,6 +21,7 @@ export class AppComponent implements OnInit {
     title: '',
     content: '',
     button: '',
+    dismissible: true,
   };
 
   /**
@@ -30,17 +31,18 @@ export class AppComponent implements OnInit {
     title: '',
     content: '',
     buttons: [],
+    dismissible: true,
   };
 
   /**
    * View message child.
    */
-  @ViewChild(SweetMessageComponent, { static: false }) messageComponent: SweetMessageComponent;
+  @ViewChild(SweetMessageComponent) messageComponent: SweetMessageComponent;
 
   /**
    * View qua=tion child.
    */
-  @ViewChild(SweetQuestionComponent, { static: false }) questionComponent: SweetQuestionComponent;
+  @ViewChild(SweetQuestionComponent) questionComponent: SweetQuestionComponent;
 
   /**
    * @ignore

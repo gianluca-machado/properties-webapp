@@ -1,24 +1,33 @@
 // modules
-import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
+import { CommonModule, registerLocaleData } from '@angular/common';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ComponentsModule } from './../components/components.module';
 
-// see documentation: https://ng.ant.design/components/spin/en
-import { NgZorroAntdModule } from 'ng-zorro-antd';
+/** config angular i18n **/
+import pt from '@angular/common/locales/pt';
+registerLocaleData(pt);
 
+/** config ng-zorro-antd i18n **/
+import { NZ_I18N, pt_BR } from 'ng-zorro-antd/i18n';
+
+// icons
 import { IconDefinition } from '@ant-design/icons-angular';
-import { NzIconModule, NZ_ICON_DEFAULT_TWOTONE_COLOR, NZ_ICONS } from 'ng-zorro-antd/icon';
-import { UserOutline, LockOutline, MenuUnfoldOutline, MenuFoldOutline, TeamOutline, LogoutOutline } from '@ant-design/icons-angular/icons';
+import * as AllIcons from '@ant-design/icons-angular/icons';
 
-const icons: IconDefinition[] = [
-  UserOutline,
-  LockOutline,
-  MenuUnfoldOutline,
-  MenuFoldOutline,
-  TeamOutline,
-  LogoutOutline,
-];
+// see documentation: https://ng.ant.design/components/spin/en
+import { NzIconModule, NZ_ICONS } from 'ng-zorro-antd/icon';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+
+const antDesignIcons = AllIcons as {
+  [key: string]: IconDefinition;
+};
+const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesignIcons[key]);
 
 @NgModule({
   imports: [
@@ -26,8 +35,13 @@ const icons: IconDefinition[] = [
     FormsModule,
     ReactiveFormsModule,
     ComponentsModule,
-    NgZorroAntdModule,
     NzIconModule,
+    NzLayoutModule,
+    NzFormModule,
+    NzInputModule,
+    NzMenuModule,
+    NzButtonModule,
+    NzCheckboxModule,
   ],
   declarations: [],
   exports: [
@@ -35,10 +49,17 @@ const icons: IconDefinition[] = [
     FormsModule,
     ReactiveFormsModule,
     ComponentsModule,
-    NgZorroAntdModule,
+    NzIconModule,
+    NzLayoutModule,
+    NzFormModule,
+    NzInputModule,
+    NzMenuModule,
+    NzButtonModule,
+    NzCheckboxModule,
   ],
   providers: [
-    { provide: NZ_ICON_DEFAULT_TWOTONE_COLOR, useValue: '#00ff00' },
+    { provide: LOCALE_ID, useValue: 'pt' },
+    { provide: NZ_I18N, useValue: pt_BR },
     { provide: NZ_ICONS, useValue: icons },
   ],
 })

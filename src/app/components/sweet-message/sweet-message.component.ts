@@ -16,7 +16,7 @@ export class SweetMessageComponent {
   /**
    * Swal view child reference.
    */
-  @ViewChild('swal', { static: false }) public generalSwal: SwalComponent;
+  @ViewChild('swal') public generalSwal: SwalComponent;
 
   /**
    * Swal options.

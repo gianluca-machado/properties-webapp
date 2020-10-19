@@ -129,6 +129,9 @@ export interface MessageState {
   // content text
   content: string;
 
+  // if message simissible
+  dismissible: boolean;
+
   // button text
   button: string;
 
@@ -144,6 +147,9 @@ export interface QuestionState {
 
   // content text
   content: string;
+
+  // if message simissible
+  dismissible: boolean;
 
   // button text
   buttons: QuestionStateButton[];
