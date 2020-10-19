@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CustomizeMessageService } from 'src/app/services/customize-message.service';
 
 /**
  * Login component.
@@ -20,6 +21,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
+    private customizeMessageService: CustomizeMessageService,
   ) { }
 
   /**
@@ -40,6 +42,10 @@ export class LoginComponent implements OnInit {
 
   clickNew() {
     this.router.navigate(['new']);
+  }
+
+  forgotPassword() {
+    this.customizeMessageService.showMessage('Aviso', 'Esqueci minha senha!', 'Ok');
   }
 
 }
