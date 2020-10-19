@@ -31,7 +31,7 @@
     "@angular/service-worker": "^9.1.12",
     "@ant-design/icons": "^4.2.2",
     "@ngx-pwa/local-storage": "^10.1.0",
-    "@sweetalert2/ngx-sweetalert2": "^5.0.1",
+    "@sweetalert2/ngx-sweetalert2": "^8.1.1",
     "@types/jest": "^24.0.11",
     "core-js": "^3.2.1",
     "jquery": "^3.4.1",
