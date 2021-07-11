@@ -6,33 +6,23 @@
   transition: color 0.3s;
 }
 
-.trigger:hover {
-  color: #1890ff;
-}
-
 .logo {
-  height: 32px;
-  background: rgba(255, 255, 255, 0.2);
-  margin: 16px;
+  padding: 10px;
 }
 
-nz-header {
-  background: #fff;
-  padding: 0;
+.text-logo {
+  width: 130px;
+  font-size: x-large;
 }
 
-nz-content {
-  margin: 0 16px;
+.divider-logo-content {
+  padding: 0px 3px;
 }
 
-nz-breadcrumb {
-  margin: 16px 0;
-}
-
-.inner-content {
-  padding: 24px;
-  background: #fff;
-  min-height: 360px;
+.divider-logo {
+  margin-top: 4px;
+  margin-bottom: 0px;
+  background: white;
 }
 
 nz-footer {
@@ -41,4 +31,18 @@ nz-footer {
 
 nz-layout {
   height: 100vh;
+}
+
+.inner-content {
+  min-height: 100%;
+  border-radius: 5px;
+}
+
+li:first-child {
+  margin-top: -1px;
+  padding-top: 4px;
+}
+
+.no-padding-top {
+  padding-top: 0px !important;
 }

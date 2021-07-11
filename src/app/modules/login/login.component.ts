@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CustomizeMessageService } from 'src/app/services/customize-message.service';
 
 /**
  * Login component.
@@ -12,8 +11,9 @@ import { CustomizeMessageService } from 'src/app/services/customize-message.serv
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-
   public loginForm: FormGroup;
+
+  public passwordVisible: boolean = false;
 
   /**
    * @ignore
@@ -21,7 +21,6 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private customizeMessageService: CustomizeMessageService,
   ) { }
 
   /**
@@ -31,6 +30,7 @@ export class LoginComponent implements OnInit {
     this.loginForm = this.formBuilder.group({
       email: ['', Validators.compose([Validators.required, Validators.email])],
       password: ['', Validators.compose([Validators.required])],
+      remember: [false],
     });
   }
 
@@ -40,12 +40,7 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['menu']);
   }
 
-  clickNew() {
+  clickCreateAccount() {
     this.router.navigate(['new']);
   }
-
-  forgotPassword() {
-    this.customizeMessageService.showMessage('Aviso', 'Esqueci minha senha!', 'Ok');
-  }
-
 }

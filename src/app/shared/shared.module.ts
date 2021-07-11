@@ -2,13 +2,11 @@
 import { CommonModule, registerLocaleData } from '@angular/common';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ComponentsModule } from './../components/components.module';
 
-/** config angular i18n **/
+// config angular i18n
 import pt from '@angular/common/locales/pt';
-registerLocaleData(pt);
 
-/** config ng-zorro-antd i18n **/
+// config ng-zorro-antd i18n
 import { NZ_I18N, pt_BR } from 'ng-zorro-antd/i18n';
 
 // icons
@@ -23,11 +21,22 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { NzMessageModule } from 'ng-zorro-antd/message';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzImageModule } from 'ng-zorro-antd/image';
+import { TranslateModule } from '@ngx-translate/core';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { ComponentsModule } from '../components/components.module';
+import { LanguageService } from '../services/language.service';
+
+registerLocaleData(pt);
 
 const antDesignIcons = AllIcons as {
   [key: string]: IconDefinition;
 };
-const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesignIcons[key]);
+const icons: IconDefinition[] = Object.keys(antDesignIcons).map((key) => antDesignIcons[key]);
 
 @NgModule({
   imports: [
@@ -42,6 +51,13 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     NzMenuModule,
     NzButtonModule,
     NzCheckboxModule,
+    NzListModule,
+    NzMessageModule,
+    NzSwitchModule,
+    NzSelectModule,
+    NzImageModule,
+    TranslateModule.forChild(LanguageService.LoaderForChild()),
+    NzDividerModule,
   ],
   declarations: [],
   exports: [
@@ -56,6 +72,13 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     NzMenuModule,
     NzButtonModule,
     NzCheckboxModule,
+    NzListModule,
+    NzMessageModule,
+    NzSwitchModule,
+    NzSelectModule,
+    NzImageModule,
+    TranslateModule,
+    NzDividerModule,
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt' },

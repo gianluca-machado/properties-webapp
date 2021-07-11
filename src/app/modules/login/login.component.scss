@@ -1,9 +1,18 @@
 .container {
   height: 100vh;
-  background: url('/assets/background.jpg');
+  width: 100vw;
+}
+
+.background-image {
+  background: url('/assets/images/background.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+.divider {
+  width: 100%;
+  height: 100vh;
 }
 
 .box {
@@ -17,6 +26,14 @@
   width: 100%;
 }
 
-img {
-  max-width: 180px;
+.border-input-control {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  line-height: 2.5;
+  box-shadow: none;
+}
+
+.margin-top-50px {
+  margin-top: 50px;
 }
